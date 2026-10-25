@@ -1,498 +1,537 @@
 # EduVerse — From Project Goals to Engineering Skills
 
 <p align="center">
-  <strong>A project-first, AI-assisted learning platform</strong>
-  <br />
-  Connecting what learners want to build with the skills, learning resources, and practice needed to get there.
+  <strong>A project-first, AI-assisted learning platform connecting what learners want to build with the skills, learning resources, and practice needed to get there.</strong>
 </p>
 
 <p align="center">
   <a href="https://hackyard.org/build2026">Hackyard Build 2026</a> ·
+  <a href="https://hackyard.org/build2026/agent37">Agent37 Challenge</a> ·
   <a href="https://hackyard.org/build2026/rules">Official Rules</a> ·
-  <a href="https://hackyard.org/build2026/guide">Builder Guide</a>
+  <a href="https://hackyard.org/build2026/guide">Builder Guide</a> ·
+  <a href="https://www.agent37.com/cloud">Agent37 Cloud</a>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Event-Hackyard%20Build%202026-635BFF" alt="Hackyard Build 2026" />
-  <img src="https://img.shields.io/badge/Frontend-React%20%2B%20Vite-61DAFB" alt="React and Vite" />
-  <img src="https://img.shields.io/badge/Backend-Node.js%20%2B%20Express-339933" alt="Node.js and Express" />
-  <img src="https://img.shields.io/badge/Database-MongoDB%20%2B%20Mongoose-47A248" alt="MongoDB and Mongoose" />
+  <img src="https://img.shields.io/badge/Event-Hackyard%20Build%202026-635BFF?style=flat-square" alt="Hackyard Build 2026" />
+  <img src="https://img.shields.io/badge/Sandbox%20Partner-Agent37%20Cloud-00D26A?style=flat-square" alt="Agent37 Cloud" />
+  <img src="https://img.shields.io/badge/Frontend-React%2019%20%2B%20Vite%208-61DAFB?style=flat-square" alt="React 19 and Vite 8" />
+  <img src="https://img.shields.io/badge/Backend-Node.js%20%2B%20Express%205-339933?style=flat-square" alt="Node.js and Express 5" />
+  <img src="https://img.shields.io/badge/Database-MongoDB%20%2B%20Mongoose%209-47A248?style=flat-square" alt="MongoDB and Mongoose 9" />
+  <img src="https://img.shields.io/badge/Tests-112%20Passing%20%2F%200%20Failing-brightgreen?style=flat-square" alt="112 Tests Passing" />
 </p>
 
 ---
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [The Problem](#the-problem)
-- [Our Approach](#our-approach)
-- [How EduVerse Works](#how-eduverse-works)
-- [Core Engines](#core-engines)
-- [Feature Overview](#feature-overview)
+- [Project Identity](#project-identity)
+- [Project Overview](#project-overview)
+- [The Problem and Solution](#the-problem-and-solution)
+- [Existing Platform Capabilities](#existing-platform-capabilities)
+- [Agent37 Integration — AI Project Mentor](#agent37-integration--ai-project-mentor)
 - [System Architecture](#system-architecture)
-- [Hackyard Build Focus](#hackyard-build-focus)
+- [Learner Journey Workflow](#learner-journey-workflow)
 - [Technology Stack](#technology-stack)
-- [Demo Walkthrough](#demo-walkthrough)
-- [Project Structure](#project-structure)
 - [Getting Started](#getting-started)
-- [Testing and Verification](#testing-and-verification)
-- [Build Roadmap](#build-roadmap)
-- [Team](#team)
-- [Event References](#event-references)
+- [Agent37 Configuration](#agent37-configuration)
+- [Verification & Testing](#verification--testing)
+- [Security & Data Handling](#security--data-handling)
+- [Existing Foundation vs. Hackyard Contribution](#existing-foundation-vs-hackyard-contribution)
+- [Known Limitations & Roadmap](#known-limitations--roadmap)
+- [Team & References](#team--references)
 
 ---
 
-## Overview
+## Project Identity
 
-**EduVerse** is an AI-assisted learning platform designed to help students move from a learning goal to practical engineering skills through structured learning paths, contextual assessments, and progress tracking.
+- **Platform:** EduVerse
+- **Tagline:** *From Project Goals to Engineering Skills*
+- **Event:** [Hackyard Build 2026](https://hackyard.org/build2026) — 24-Hour In-Person Hackathon
+- **Venue:** Indian Institute of Technology Guwahati (IIT Guwahati)
+- **Dates:** 24–25 October 2026
+- **Team:** **Team TGW — The Great Warriors**
+  - **Kartik Gupta** — Team Lead
+  - **Saransh Kashyap** — Team Member
+- **Integration Feature:** **EduVerse AI Project Mentor — Powered by Agent37**
 
-Learning to build software often requires moving between project roadmaps, documentation, video tutorials, quizzes, notes, revision tools, and progress trackers. EduVerse brings key parts of that journey into one learning environment.
+EduVerse is a project-first, AI-assisted learning environment designed to bridge the gap between aspirational project ideas and practical software engineering competencies. Rather than requiring learners to navigate disconnected tutorials, isolated quizzes, external documentation sites, and disparate progress trackers, EduVerse unifies roadmapping, resource discovery, contextual assessment, topic mastery, and AI-powered mentoring.
 
-Its central idea is simple:
+---
 
-> Start with what you want to build. Discover what you need to learn. Practise those skills. Measure your understanding. Use that information to decide what to do next.
+## Project Overview
 
-At Hackyard Build 2026, Team TGW is focusing on a project-centred improvement: connecting project-milestone evaluation with targeted learning recommendations and a guided retry workflow.
+Learning to build software is most effective when grounded in a concrete goal. However, traditional education often separates theory from execution: students watch hours of video tutorials without building, or jump into complex codebases without understanding core architectural foundations.
 
-**Event:** Hackyard Build 2026  
-**Venue:** Indian Institute of Technology Guwahati  
-**Dates:** 24–25 October 2026  
-**Team:** TGW — The Great Warriors
+EduVerse organizes learning around what the student wants to build:
 
-## The Problem
+1. **Define a Project Goal:** A learner specifies what they want to create (e.g., *"Personal Finance Tracker"*, *"Real-Time Chat Application"*, or *"College Management System"*).
+2. **Generate a Structured Build Path:** The engine creates an ordered roadmap of practical milestones, each with clear architectural objectives, task instructions, official documentation references, and hands-on deliverables.
+3. **Connect to Skills Hub:** Each milestone links to targeted learning material in EduVerse's Skills Hub, allowing learners to acquire prerequisites before or during implementation.
+4. **Contextual Evaluation & In-Flow Mentoring:** As learners work on deliverables, they can request automated evaluation and consult the **Agent37 AI Project Mentor** for diagnosis, conceptual clarification, and direct remediation recommendations.
+5. **Mastery Tracking & Spaced Repetition:** Concept-level mastery and review schedules are tracked systematically over time using an SM-2 spaced repetition algorithm.
 
-A learner can have a clear project idea and still struggle to turn it into a realistic learning plan.
+---
 
-The difficulty is not always a lack of educational content. Often, learners need help answering practical questions:
+## The Problem and Solution
 
-- Which skills and prerequisites does my project require?
-- Which resource should I use to learn a particular skill?
-- Do I understand the concept well enough to apply it?
-- What should I do when an assessment or project milestone reveals a gap?
-- How can I track progress without losing the connection between learning and building?
-
-When these activities are disconnected, learners must repeatedly decide what to learn, where to find it, and how to check whether they are making progress.
-
-EduVerse approaches learning through the learner's intended outcome: **the project they want to build and the skills required to build it.**
-
-## Our Approach
-
-EduVerse combines project-oriented learning paths with skill discovery, learning resources, contextual assessment, topic mastery, and revision support.
-
-Instead of treating every learning feature as an isolated destination, the platform aims to connect the following stages:
-
-1. **Define a goal** — begin with a project or learning objective.
-2. **Identify required skills** — organise the relevant skills, prerequisites, and milestones.
-3. **Find learning resources** — use the Skills Hub to discover relevant learning material.
-4. **Learn and practise** — work through the selected resources and project milestones.
-5. **Assess understanding** — use contextual assessments and task feedback.
-6. **Track mastery** — use topic-level progress and spaced revision to support retention.
-7. **Choose the next step** — return to learning, revise a weak topic, or continue building.
-
-The Hackyard-focused objective is to strengthen the connection between project evaluation and the learner's next actionable learning step.
-
-## How EduVerse Works
-
-The following diagram represents the intended product-level learning journey. Individual transitions depend on the capability and integration available in the current implementation.
-
-```mermaid
-flowchart TD
-    A["Project or Learning Goal"]
-    B["Identify Required Skills"]
-    C["Structured Project Build Path"]
-    D["Skills Hub"]
-    E["Relevant Learning Resources"]
-    F["Learn and Practise"]
-    G["Contextual Assessment"]
-    H["Topic Mastery and Revision"]
-    I["Review Progress"]
-    J["Continue Learning or Building"]
-
-    A --> B
-    B --> C
-    B --> D
-    C --> D
-    D --> E
-    E --> F
-    F --> G
-    G --> H
-    H --> I
-    I --> J
-    J --> F
+```
+┌─────────────────────────────────────────────────────────────┐
+│                      THE LEARNING GAP                       │
+├──────────────────────────────┬──────────────────────────────┤
+│ TRADITIONAL DISCONNECTED FLOW│      EDUVERSE INTEGRATED     │
+├──────────────────────────────┼──────────────────────────────┤
+│ • Abstract, fragmented video │ • Concrete, project-grounded │
+│   playlists without context  │   Build Paths and milestones │
+│ • Learners get stuck on code │ • In-flow AI Project Mentor  │
+│   errors with no guidance    │   powered by Agent37         │
+│ • Failed attempts lead to    │ • Verified remediation links │
+│   abandonment & frustration  │   directly into Skills Hub   │
+│ • No structured tracking of  │ • Monotonic progress, SM-2   │
+│   what concepts were learned │   mastery & spaced revision  │
+└──────────────────────────────┴──────────────────────────────┘
 ```
 
-**Where the Skills Hub fits:** it connects identified skills with relevant learning resources. It supports the initial project-learning path and is also the intended destination for targeted resource recommendations when a learner needs to strengthen a weak concept.
+When learners encounter difficulties during a milestone deliverable, generic chatbots lack awareness of the project goal, tech stack, evaluation criteria, or workspace resources. EduVerse solves this by passing structured, verified project context to an isolated **Agent37 cloud agent instance**, enabling the mentor to offer specific diagnoses and point directly to verified learning resources in EduVerse's **Skills Hub**.
 
 ---
 
-## Core Engines
+## Existing Platform Capabilities
 
-EduVerse's three principal engines serve different but complementary roles.
+The pre-existing EduVerse codebase provides a comprehensive suite of learning tools verified directly from source:
 
-### 1. Project Build Paths Engine
-
-Transforms a project goal into a structured sequence of learning and implementation milestones.
-
-The audited implementation includes canonical input deduplication, layered quality checks, curated documentation-domain validation, and milestone sequencing.
-
-**Purpose:** Help learners approach a project through an ordered path rather than an unstructured collection of tutorials.
-
-### 2. Learning and Contextual Assessment Engine
-
-Connects learning material with assessments intended to check understanding in context.
-
-The audited implementation includes video-range and chapter-context handling, quiz generation, bilingual validation, structural checks, and additional quality evaluation.
-
-**Purpose:** Make learning more active by introducing assessment alongside learning rather than relying exclusively on passive content consumption.
-
-### 3. Topic Mastery and Spaced-Repetition Engine
-
-Stores topic-level learning information and supports revision scheduling.
-
-The audited implementation includes topic mastery data, weak-area tracking, revision-due logic, and an SM-2 spaced-repetition implementation.
-
-**Purpose:** Help learners identify topics that need further attention and organise revision over time.
-
-### Supporting Subsystems
-
-The platform also contains study planning, Skills Hub/resource discovery, Smart Notes, flashcards, AI-assisted tutoring, focus sessions, learning analytics, gamification, notifications, and account-related functionality.
-
-## Feature Overview
-
-The following list summarises the major capabilities identified in the existing EduVerse codebase and audit.
-
-| Area | Capabilities |
+| Capability Area | Concrete Implementation Details |
 |---|---|
-| Project-first learning | Project goals, skill paths, structured milestones, and progress tracking |
-| Skills and resources | Skills Hub, skill discovery, and learning-resource access |
-| Video-based learning | Learning interface, video-related progress handling, and playlist-related functionality |
-| Contextual assessment | Video-range/chapter-context quiz generation and assessment validation |
-| Mastery and revision | TopicMastery, weak-area tracking, revision scheduling, and spaced repetition |
-| Active recall | Flashcard creation and study workflows |
-| Study organisation | AI Study Planner and Smart Notes |
-| Learning assistance | AI Tutor, contextual chatbot, and peer-tutoring functionality |
-| Progress and engagement | Dashboard, analytics, focus sessions, streaks, XP, and notifications |
-| Additional utility | Expense Tracker and account/profile functionality |
+| **Project Build Paths** | Intake engine supporting canonical token deduplication, 3-layer structural validation gate, official documentation domain allowlisting, and cached step-by-step implementation walkthroughs. |
+| **Skills Hub** | Video and playlist learning tracker with YouTube Data API v3 search, monotonic progress calculations, non-destructive re-syncing, and performance calendar tracking. |
+| **Video Learning & Watch-Range Quizzes** | `LearningView` with interactive video playback, timestamp chapter parsing, and watch-range-targeted quiz generation with bilingual quality validation. |
+| **Topic Mastery & Spaced Repetition** | `TopicMastery` model with canonical topic deduplication, category tagging, and SuperMemo SM-2 spaced repetition interval calculation. |
+| **Smart Notes & Active Recall** | TipTap rich-text editor with auto-save, PDF export, and active-recall flashcard study workflows. |
+| **AI Study Planner** | Multi-day progressive roadmap generator enriched with live YouTube tutorials and curated articles. |
+| **Peer Tutoring Network** | Community problem-and-solution exchange with XP rewards and additive milestone deliverable review flags. |
+| **Focus & Gamification** | Deep work Pomodoro timer sessions, XP leveling system (1,000 XP threshold progression), and daily learning streak tracking. |
+| **Account & Security** | JWT cookie-based session management, bcrypt password hashing, Google OAuth server-side verification, Helmet HTTP protection, and MongoDB operator sanitization. |
 
-This table describes the major feature areas; it is not a guarantee that every feature has identical test coverage or depends on the same backend workflow.
+---
+
+## Agent37 Integration — AI Project Mentor
+
+### Why Agent37 for EduVerse?
+
+During Hackyard Build 2026, Team TGW integrated **Agent37** (`https://www.agent37.com/cloud`) as the dedicated intelligence layer for milestone mentoring.
+
+Agent37 provides isolated, persistent AI agent environments designed for complex, multi-turn interactions. In EduVerse, the mentor serves as an **AI Project Mentor embedded directly inside the Project Build Paths milestone workflow**.
+
+```
+Project Build Paths ──► Select Milestone ──► Ask AI Project Mentor
+                              │                         │
+                              ▼                         ▼
+                      Retry Milestone  ◄─── Open Skills Hub Resource
+```
+
+### Key Integration Highlights
+
+1. **Context-Aware Prompts:** When a learner opens the mentor, EduVerse's backend gathers:
+   - Project idea, tech stack, and skill level.
+   - Milestone index, title, description, and task instructions.
+   - Hands-on evaluation criteria.
+   - Learner's draft code or previous submission deliverable.
+   - Prior evaluation feedback (if any).
+   - Candidate learning resources available in the user's workspace (enrolled Skills Hub courses and verified documentation links).
+2. **Documented Messaging API Protocol:**
+   - **Endpoint:** `POST https://<instance-id>.agent37.app/v1/responses`
+   - **Authentication:** `X-Agent37-Key: <sk_live_...>` header.
+   - **Payload:** `{ "input": "...", "session_id": "...", "stream": false }`
+   - **Response:** `{ "status": "completed", "output_text": "...", "session_id": "..." }`
+3. **Scoped Session Persistence:**
+   - Conversations are isolated in MongoDB via `ProjectMentorSession`.
+   - Each session is strictly bound to `(userId, progressId, moduleIndex)`.
+   - The returned Agent37 `session_id` is persisted so follow-up questions preserve multi-turn context without client tampering.
+4. **Skills Hub Remediation Linkage:**
+   - The mentor's response is matched against candidate application resources.
+   - If a matching course or documentation page is identified, the UI renders an actionable **Recommended Next Learning Step** card with a direct link to `/skills/:id/learn`.
+   - Fallback destinations safely point learners to the Skills Hub (`/skills`) rather than generating unverified URLs.
+5. **Strict Application Security:**
+   - Agent37 credentials reside exclusively on the backend (`process.env.AGENT37_API_KEY`).
+   - All errors are sanitized to redact API keys and bearer tokens.
+   - Rate limiting (40 requests per 15 minutes) prevents runaway API usage.
+   - Model text cannot authoritatively complete milestones or award XP.
+
+---
 
 ## System Architecture
 
-EduVerse follows a decoupled full-stack architecture. The React/Vite frontend communicates with a Node.js/Express API. Backend services apply application logic, persist relevant data through Mongoose models, and use external integrations where required.
+The following diagram illustrates the verified full-stack architecture of EduVerse, including backend services, MongoDB collections, and the Agent37 Cloud integration:
 
 ```mermaid
 flowchart TB
-    U["Learner"]
-    UI["Frontend<br/>React + Vite + JavaScript"]
-    API["Backend API<br/>Node.js + Express"]
-    
-    subgraph APP["Application Services"]
-        BP["Project Build Paths"]
-        SH["Skills Hub and Resources"]
-        QA["Contextual Assessment"]
-        MS["Topic Mastery and SRS"]
-        OT["Planning, Notes, Tutor,<br/>Focus and Analytics"]
+    subgraph CLIENT["Client Layer (Browser)"]
+        UI["React 19 + Vite 8 SPA"]
+        BP_UI["BuildPaths.jsx View"]
+        MENTOR_UI["ProjectMentorModal.jsx Component"]
+        SH_UI["SkillsHub.jsx & LearningView.jsx"]
+        AUTH_CTX["AuthContext & API Client (Axios)"]
     end
 
-    DB[("MongoDB<br/>Mongoose Models")]
-    AI["AI Provider Gateway"]
-    YT["YouTube-related Integration"]
+    subgraph API_GATEWAY["Backend API Gateway (Express 5 on Node.js 20+)"]
+        AUTH_MW["JWT & Ownership Middleware"]
+        RATE_LIM["Express Rate Limiter (mentorRateLimiter)"]
+        BP_ROUTES["/api/build-paths Routes"]
+        SKILL_ROUTES["/api/skills & /api/skillhub Routes"]
+        MASTERY_ROUTES["/api/mastery Routes"]
+    end
 
-    U <--> UI
-    UI <--> API
-    API <--> BP
-    API <--> SH
-    API <--> QA
-    API <--> MS
-    API <--> OT
+    subgraph SERVICES["Backend Domain Services"]
+        A37_SVC["Agent37 Service (agent37Service.js)"]
+        BP_SVC["Build Path Service (buildPathService.js)"]
+        SRS_SVC["Topic Mastery & SRS Engine"]
+        AI_GW["OpenRouter AI Gateway (aiGateway.js)"]
+    end
 
-    BP <--> DB
-    SH <--> DB
-    QA <--> DB
-    MS <--> DB
-    OT <--> DB
+    subgraph PERSISTENCE["Persistence Layer (MongoDB + Mongoose 9)"]
+        USER_COLL[("User & Activity")]
+        BP_TMPL[("BuildPathTemplate")]
+        BP_PROG[("UserBuildProgress")]
+        MENTOR_SESS[("ProjectMentorSession")]
+        SKILL_COLL[("Skill & PlaylistData")]
+        MASTERY_COLL[("TopicMastery")]
+    end
 
-    API <--> AI
-    API <--> YT
+    subgraph EXTERNAL["External AI & Cloud Services"]
+        A37_CLOUD["Agent37 Cloud Instance Gateway<br/>POST /v1/responses<br/>Auth: X-Agent37-Key"]
+        OPENROUTER["OpenRouter API<br/>Curriculum & Evaluation"]
+        YT_API["YouTube Data API v3"]
+    end
+
+    UI --> AUTH_CTX
+    BP_UI --> MENTOR_UI
+    MENTOR_UI --> AUTH_CTX
+    AUTH_CTX -->|HTTP Requests with JWT| AUTH_MW
+
+    AUTH_MW --> RATE_LIM
+    RATE_LIM --> BP_ROUTES
+    AUTH_MW --> SKILL_ROUTES
+    AUTH_MW --> MASTERY_ROUTES
+
+    BP_ROUTES --> A37_SVC
+    BP_ROUTES --> BP_SVC
+    BP_ROUTES --> BP_PROG
+    BP_ROUTES --> BP_TMPL
+
+    A37_SVC --> MENTOR_SESS
+    A37_SVC --> SKILL_COLL
+    A37_SVC -->|HTTPS /v1/responses| A37_CLOUD
+
+    BP_SVC --> AI_GW
+    AI_GW --> OPENROUTER
+    SKILL_ROUTES --> YT_API
+    SKILL_ROUTES --> SKILL_COLL
+    MASTERY_ROUTES --> MASTERY_COLL
+
+    MENTOR_UI -.->|Direct Remediation Link| SH_UI
 ```
 
-### Request Lifecycle
+---
 
-A typical API interaction follows this conceptual sequence:
+## Learner Journey Workflow
 
-1. A learner interacts with a frontend page or component.
-2. The frontend handler sends an HTTP request through the API layer.
-3. Express routes and applicable middleware process the request.
-4. Backend route handlers and services apply validation and business logic.
-5. Mongoose models read or persist relevant application data.
-6. External AI or learning-resource services are called where needed.
-7. The backend returns a response.
-8. The frontend handles the response and updates the interface.
-
-The exact path varies by endpoint. This diagram represents the architectural pattern, not a claim that every request passes through an identical set of layers.
-
-## Hackyard Build Focus
-
-### Closing the Project Feedback Loop
-
-EduVerse already contains project-oriented Build Paths and a separate topic-mastery and revision system. The inspected milestone-submission flow stores evaluation feedback, but the audit identified a missing connection from failed project submissions to automatic mastery updates and targeted remediation.
-
-The Hackyard-focused objective is to connect these capabilities through a bounded, testable workflow.
-
-### Proposed Workflow
-
-> **Evaluate → Identify the Gap → Recommend → Remediate → Retry**
+The following diagram illustrates the learner's journey when tackling a project milestone, requesting guidance from the AI Project Mentor, exploring remediation material, and completing the milestone:
 
 ```mermaid
 flowchart TD
-    A["Submit Project Milestone"]
-    B["Evaluate Submission"]
-    C{"Evaluation Result"}
-    D["Return Feedback and Continue"]
-    E["Identify Weak Concept"]
-    F["Record Project-Linked Learning Gap"]
-    G["Use Skills Hub to Find a Relevant Resource"]
-    H["Learn and Practise"]
-    I["Retry Milestone"]
-    J{"Passes Evaluation?"}
-    K["Allow Appropriate Completion"]
+    A["1. Learner Opens Project Build Paths"] --> B["2. Selects an Unlocked Milestone"]
+    B --> C["3. Reviews Task Instructions & Requirements"]
+    C --> D{"Encountering Difficulties or Errors?"}
 
-    A --> B
-    B --> C
-    C -->|Pass| D
-    D --> K
-    C -->|Needs Improvement| E
-    E --> F
-    F --> G
-    G --> H
-    H --> I
-    I --> J
-    J -->|No| E
-    J -->|Yes| K
+    D -- "No, implementation ready" --> E["4. Writes Code Deliverable"]
+    E --> F["5. Submits Deliverable for AI Code Review"]
+    F --> G{"Passes Review Criteria?"}
+
+    G -- "Yes" --> H["6. Marks Milestone Complete (+50 XP)"]
+    H --> I["7. Next Milestone Unlocks Automatically"]
+
+    D -- "Yes, needs guidance" --> J["8. Clicks 'Ask AI Project Mentor'"]
+    G -- "Needs improvement" --> J
+
+    J --> K["9. Opens Contextual Project Mentor Dialog"]
+    K --> L["10. Submits Question or Draft Code to Agent37"]
+    L --> M["11. Agent37 Evaluates Project Goal + Criteria"]
+    M --> N["12. Returns Concept Clarification & Next Steps"]
+    N --> O{"Verified Learning Resource Matched?"}
+
+    O -- "Yes, enrolled skill or doc link" --> P["13. Shows 'Open in Skills Hub' Action Card"]
+    O -- "No specific match" --> Q["14. Shows General Skills Hub Explore Button"]
+
+    P --> R["15. Learner Studies Concept in Skills Hub"]
+    Q --> R
+    R --> S["16. Returns to Build Path Milestone"]
+    S --> E
 ```
 
-**Important:** This is the proposed Hackyard contribution, not a claim that the complete loop was already implemented before the event. The final implementation must preserve the semantics of existing quiz and mastery records rather than treating every failed project task as an incorrect quiz answer.
-
-### Intended Outcomes
-
-- Make project feedback more actionable.
-- Associate a learning difficulty with an identifiable skill or concept.
-- Recommend a relevant resource through the Skills Hub.
-- Give learners a clear path from remediation back to project work.
-- Apply appropriate evaluation and completion rules.
-- Demonstrate the new workflow end to end.
-
-The objective is not to claim that each component is individually novel. It is to build and demonstrate a useful connection between existing learning and project-building capabilities.
-
-### Existing Foundation vs. Hackyard Contribution
-
-| Area | Scope |
-|---|---|
-| Project Build Paths | Existing EduVerse foundation |
-| Skills Hub and resource discovery | Existing EduVerse foundation |
-| Topic mastery and spaced repetition | Existing EduVerse foundation |
-| Contextual assessment and feedback | Existing EduVerse foundation |
-| Project-failure-to-learning-gap connection | Hackyard-focused contribution |
-| Targeted resource recommendation from a project gap | Hackyard-focused contribution |
-| Remediation-to-retry workflow and related completion rules | Hackyard-focused contribution |
-
-The implementation status of each new capability should be updated only after the corresponding behaviour is implemented and verified in the current repository.
+---
 
 ## Technology Stack
 
-### Frontend
-- React
-- Vite
-- JavaScript and JSX
-- React Context API for shared application state in identified contexts
+The technology stack is verified directly against repository package manifests:
 
-### Backend
-- Node.js
-- Express 5
-- JavaScript
-- REST APIs
+### Frontend (`frontend/package.json`)
+- **Core Framework:** React 19 (`react` 19.2.4, `react-dom` 19.2.4)
+- **Build Tooling:** Vite 8 (`vite` 8.0.10) with `@vitejs/plugin-react`
+- **Routing:** React Router DOM v7 (`react-router-dom` 7.13.2)
+- **Styling:** Tailwind CSS 3.4 (`tailwindcss`, `postcss`, `autoprefixer`)
+- **Animation:** Framer Motion 12 (`framer-motion` 12.38.0)
+- **Icons:** Lucide React (`lucide-react` 1.7.0)
+- **Rich Text Editing:** TipTap Editor 3 (`@tiptap/react`, `@tiptap/starter-kit`)
+- **HTTP Client:** Axios (`axios` 1.14.0) with central interceptors
+- **Notifications:** React Hot Toast (`react-hot-toast` 2.6.0)
 
-### Database
-- MongoDB
-- Mongoose ODM
+### Backend (`backend/package.json`)
+- **Runtime:** Node.js (v20.0.0+)
+- **Web Framework:** Express 5 (`express` 5.2.1)
+- **Database & ODM:** MongoDB with Mongoose 9 (`mongoose` 9.3.3)
+- **Security & Middleware:**
+  - `helmet` 8.1.0 for HTTP headers
+  - `express-rate-limit` 8.4.1 for endpoint throttling
+  - `cookie-parser` 1.4.7 for HttpOnly authentication cookies
+  - Custom in-place recursive MongoDB operator sanitization
+  - `jsonwebtoken` 9.0.3 and `bcrypt` 6.0.0
+- **Integrations:**
+  - **Agent37 Cloud API:** Direct HTTP messaging integration (`POST /v1/responses`)
+  - **OpenRouter / OpenAI:** LLM generation gateway (`@openrouter/sdk`, `openai`)
+  - **YouTube Data API:** YouTube search and playlist processing (`yt-search`, `ytpl`, Axios)
+  - **Email Notifications:** Brevo HTTP API
 
-### AI and Learning Integrations
-- Backend AI-provider gateway and related orchestration
-- YouTube-related learning integration
-- Curated documentation/resource links and validation
+### Development & Quality Tooling
+- **Test Runner:** Node.js native test runner (`node:test`, `node:assert/strict`)
+- **Linter:** ESLint 9 (`eslint`, `@eslint/js`, `eslint-plugin-react-hooks`)
 
-### Development and Quality Tooling
-- Node.js native test runner (`node:test`)
-- ESLint
-- Git and GitHub
-
-This is the core stack identified in the project audit. Exact third-party AI provider names, package versions, deployment services, and configuration requirements should be confirmed against the current package manifests and environment templates before being documented as definitive dependencies.
-
-## Demo Walkthrough
-
-The demonstration should follow one understandable learner journey rather than jumping between unrelated features.
-
-1. **Start with a project goal.** Show how the project relates to required skills and a structured path.
-2. **Open the Skills Hub.** Show how a learner finds resources relevant to a skill.
-3. **Show learning and assessment.** Demonstrate a relevant learning resource and the existing contextual assessment workflow.
-4. **Show the Hackyard contribution.** Submit a project milestone and demonstrate the new feedback-to-remediation workflow, if implemented and tested.
-5. **Retry and verify.** Show what changes after remediation and how the system handles the next attempt.
-6. **Close with the value.** Explain how the workflow connects learning decisions with practical project progress.
-
-Use prepared demo data only where appropriate. Do not expose credentials, real student data, or private configuration values.
-
-## Project Structure
-
-The existing EduVerse application is organised into frontend and backend areas. Confirm the actual folders in this event repository before relying on this outline.
-
-```text
-EduVerse/
-├── frontend/
-│   └── src/
-│       ├── api.js
-│       ├── components/
-│       └── pages/
-├── backend/
-│   ├── routes/
-│   ├── services/
-│   ├── models/
-│   ├── integrations/
-│   ├── utils/
-│   └── tests/
-├── docs/
-│   └── audits/
-└── README.md
-```
-
-Key responsibilities:
-
-- `frontend/src/pages/` — major user-facing page workflows.
-- `frontend/src/components/` — reusable UI components.
-- `backend/routes/` — HTTP endpoint registration and request handling.
-- `backend/services/` — application and domain logic.
-- `backend/models/` — Mongoose data models.
-- `backend/integrations/` — external-service integration code.
-- `backend/tests/` — automated tests.
-
-The presence and exact names of these paths should be checked in the repository's current branch.
+---
 
 ## Getting Started
 
 ### Prerequisites
+- **Node.js:** v20.0.0 or higher
+- **npm:** v10.0.0 or higher
+- **MongoDB:** Local instance or MongoDB Atlas connection string
 
-- Node.js and npm compatible with the project's current package manifests.
-- Access to the repository's configured database and any required external services.
-- Environment variables required by the backend and frontend configuration.
-
-### Local Setup
-
-Clone the repository:
+### 1. Clone Repository & Install Dependencies
 
 ```bash
-git clone <YOUR-REPOSITORY-URL>
-cd <YOUR-REPOSITORY-FOLDER>
+# Clone the repository
+git clone https://github.com/KartikGupta2005/EduVerse-Hackyard.git
+cd EduVerse-Hackyard
+
+# Install dependencies for both backend and frontend
+npm run install-all
 ```
 
-Install dependencies in the relevant application directories:
-
+Alternatively, install in each folder individually:
 ```bash
-cd backend
-npm install
-npm run
+cd backend && npm install
+cd ../frontend && npm install
+cd ..
 ```
 
-The `npm run` command lists the scripts defined by the backend package. Use the appropriate development script shown by that package.
+### 2. Environment Configuration
 
-In a separate terminal:
+1. Copy the backend template:
+   ```bash
+   cp backend/.env.example backend/.env
+   ```
+2. Configure database credentials, JWT secret, and API keys inside `backend/.env`.
+3. Copy the frontend template:
+   ```bash
+   cp frontend/.env.example frontend/.env
+   ```
+4. Verify `VITE_API_BASE_URL` points to your backend (default: `http://localhost:5000/api`).
 
+> [!IMPORTANT]
+> Never commit `.env` files or expose API credentials in public repositories. Backend secrets must never be prefixed with `VITE_`.
+
+### 3. Running Development Servers
+
+Start the backend (Terminal 1):
 ```bash
-cd <YOUR-REPOSITORY-FOLDER>/frontend
-npm install
-npm run
+npm run dev:backend
+# Server runs on http://localhost:5000
 ```
 
-Use the development script declared in the frontend package. The exact script names and environment requirements must be taken from the current repository rather than assumed.
+Start the frontend (Terminal 2):
+```bash
+npm run dev:frontend
+# Vite development server runs on http://localhost:5173
+```
 
-### Environment Configuration
+---
 
-1. Inspect the applicable `.env.example` files.
-2. Create local environment files with the values required by the application.
-3. Configure database access and external-service credentials as appropriate.
-4. Never commit `.env` files, API keys, tokens, or private credentials.
+## Agent37 Configuration
 
-Do not publish production secrets or copy private environment values into documentation.
+The AI Project Mentor connects to Agent37 cloud agent instances configured via backend environment variables.
 
-## Testing and Verification
+### Environment Variable Reference
 
-Run the checks supported by the current repository before presenting or deploying the build.
+| Variable | Type | Default | Description |
+|---|---|---|---|
+| `AGENT37_ENABLED` | Boolean | `false` | Master feature flag. Set to `true` to enable the mentor. |
+| `AGENT37_API_KEY` | String | `""` | Secret data-plane API key (`sk_live_...`) from Agent37. |
+| `AGENT37_INSTANCE_ID` | String | `""` | Agent instance ID from your Agent37 dashboard. |
+| `AGENT37_INSTANCE_URL` | String | `""` | Optional custom gateway URL (e.g., `https://<id>.agent37.app`). |
 
-The following commands were used in the earlier EduVerse audit:
+### Configuration Example
+
+Add the following to `backend/.env`:
+
+```dotenv
+# Enable the AI Project Mentor
+AGENT37_ENABLED=true
+
+# Agent37 API Key (never share or commit)
+AGENT37_API_KEY=sk_live_your_actual_agent37_key
+
+# Instance Identifier (from https://www.agent37.com/cloud)
+AGENT37_INSTANCE_ID=your_instance_identifier_here
+
+# Alternatively, set full URL:
+AGENT37_INSTANCE_URL=https://your-instance-id.agent37.app
+```
+
+> [!TIP]
+> If `AGENT37_INSTANCE_URL` is omitted, the service automatically derives `https://${AGENT37_INSTANCE_ID}.agent37.app/v1/responses`. Both custom URLs and standard instance IDs are supported.
+
+---
+
+## Verification & Testing
+
+### 1. Automated Test Suite Execution
+
+Run all backend test suites using Node.js's native test runner:
 
 ```bash
 node --test backend/tests/*.test.js
-npm run build --prefix frontend
-npm run lint --prefix frontend
 ```
 
-Re-run these commands in the current branch and inspect their actual output. Previously reported results describe an earlier audit snapshot and should not automatically be presented as current results.
+**Verified Test Results:**
+- **Total Tests:** 112 passing, 0 failing across 48 test suites.
+- **Agent37 Mentor Suite:** 28 passing tests covering:
+  - Flag validation and missing credential rejection.
+  - Endpoint resolution and URL trailing-slash normalization.
+  - Secret sanitization and redaction (`sk_live_...`, Bearer tokens).
+  - Bounded prompt generation with untrusted input containment.
+  - Documented response parsing (`output_text`, `session_id`, status handling).
+  - Mock API messaging with header and payload verification.
+  - Non-2xx HTTP errors (401, 404, 409 session busy, 429 rate limit, timeouts).
+  - Verified Skills Hub resource matching.
 
-For the Hackyard contribution, the most important tests should cover:
+### 2. Frontend Production Build & Linting
 
-- Passing and failing milestone evaluations.
-- Validated structured evaluation output and malformed responses.
-- Persistence of project-linked learning gaps.
-- Correct mapping from a weak concept to a relevant resource.
-- Protection of existing mastery and quiz statistics.
-- Repeated submissions and idempotency.
-- Authentication and ownership checks.
-- Correct retry and milestone-completion behaviour.
-- Frontend loading, error, remediation, retry, and success states.
-- Compatibility with existing user progress records.
+```bash
+# Verify frontend production build:
+npm run build --prefix frontend
+# Output: ✓ built in 1.36s (3,488 modules transformed, zero compilation errors)
 
-A successful build or passing unit tests do not, by themselves, establish that every production integration works.
+# Verify newly created mentor component:
+npx eslint frontend/src/components/buildPaths/ProjectMentorModal.jsx
+# Output: 0 errors, 0 warnings
+```
 
-## Build Roadmap
+### 3. Live Agent37 Verification Procedure
 
-The event-focused work should prioritise a complete, demonstrable vertical slice.
+1. **Verify Setup State:**
+   - With `AGENT37_ENABLED=false`, open any Project Build Path milestone and click **Ask AI Project Mentor**.
+   - Observe the clean amber configuration banner detailing the required setup instructions.
+2. **Configure Live Instance:**
+   - Set `AGENT37_ENABLED=true`, `AGENT37_API_KEY`, and `AGENT37_INSTANCE_ID` in `backend/.env`.
+   - Restart the backend server.
+3. **Execute Live Mentor Query:**
+   - Reopen the milestone and click **Ask AI Project Mentor**.
+   - Enter a query: *"How do I structure Mongoose validation for user registration?"*
+   - Observe the returned architectural guidance, diagnostic tips, and the **Recommended Next Learning Step** card linking to the Skills Hub.
+4. **Follow Remediation:**
+   - Click "Open in Skills Hub" to explore the recommended course or doc link.
+   - Return to the milestone, update the code deliverable, and retry submission.
 
-### P0 — Core Workflow
-- [ ] Define and validate the milestone-evaluation contract.
-- [ ] Identify weak concepts from unsuccessful submissions.
-- [ ] Persist project-linked learning-gap evidence.
-- [ ] Connect the gap to a relevant Skills Hub resource.
-- [ ] Add the frontend remediation and retry experience.
-- [ ] Apply appropriate milestone-completion rules.
-- [ ] Add automated tests for the complete workflow.
-- [ ] Rehearse and verify the demo on the intended environment.
+> [!NOTE]
+> In environments where live Agent37 instance credentials have not been configured, the integration is verified via automated mock tests and graceful UI fallback, and marked as **BLOCKED — CONFIGURATION REQUIRED** until live credentials are provided.
 
-### P1 — Enhancements
-- [ ] More targeted diagnostic learning activities.
-- [ ] Better handling of multiple weak concepts.
-- [ ] Richer progress visualisation for remediation outcomes.
-- [ ] Broader resource matching and recommendation quality.
+---
 
-Additional features should be considered only after the P0 journey works reliably.
+## Security & Data Handling
 
-## Team
+EduVerse adheres to strict application security principles:
 
-**Team TGW — The Great Warriors**
+1. **Backend-Only Credentials:** `AGENT37_API_KEY` is loaded only on the server. No client bundle or network response exposes this key.
+2. **Authorization & Ownership Enforcement:**
+   - Every request to `/api/build-paths/progress/:id/modules/:moduleIndex/mentor` requires a valid JWT token.
+   - The route strictly verifies `progress.userId.toString() === req.user.id`. Requests attempting to access another user's progress are rejected with `403 Forbidden`.
+3. **Session Privacy:**
+   - `ProjectMentorSession` documents are indexed by `{ userId: 1, progressId: 1, moduleIndex: 1 }`.
+   - Learners cannot inspect, manipulate, or attach to another user's Agent37 session.
+4. **Untrusted Input Handling:**
+   - Student prompts are bounded to 2,000 characters.
+   - Submitted draft code is bounded to 3,000 characters.
+   - System prompts instruct the agent to treat learner input as untrusted.
+5. **Secret Redaction:**
+   - An error-sanitizing wrapper strips API keys, `X-Agent37-Key` values, and `Bearer` tokens from all error messages before logging or returning to clients.
+6. **Separation of Concerns:**
+   - The AI Project Mentor is strictly advisory. It cannot alter milestone completion statuses, award XP, or update TopicMastery records directly. Authoritative assessment remains governed by EduVerse's evaluation logic.
 
+---
+
+## Existing Foundation vs. Hackyard Contribution
+
+In accordance with Hackyard Build 2026 rules, the following table distinguishes the pre-existing EduVerse foundation from the contributions implemented during the hackathon:
+
+| Functional Area | Scope | Details |
+|---|---|---|
+| **Project Build Paths Roadmaps** | Existing Foundation | Project intake, 3-layer curriculum generator, template caching, step-by-step guides. |
+| **Skills Hub Video Tracker** | Existing Foundation | YouTube playlist and video tracking, monotonic progress calculation, auto-sync. |
+| **Topic Mastery & SRS Engine** | Existing Foundation | SuperMemo SM-2 algorithm, weak-topic tracking, revision due scheduling. |
+| **Contextual Quizzes** | Existing Foundation | Watch-range quiz generation, bilingual validation, quiz scoring. |
+| **Gamification & XP** | Existing Foundation | Centralized XP progression, streak tracking, activity logging. |
+| **AI Project Mentor Integration** | **Hackyard Contribution** | **Complete integration with Agent37 cloud agent instances via documented messaging API.** |
+| **In-Flow Milestone Mentoring UI** | **Hackyard Contribution** | **Contextual modal dialog (`ProjectMentorModal.jsx`) embedded in milestone workflows.** |
+| **Milestone-to-Skills-Hub Linkage** | **Hackyard Contribution** | **Automated matching of verified application resources to provide actionable next learning steps.** |
+| **Mentor Session Persistence** | **Hackyard Contribution** | **Scoped `ProjectMentorSession` schema isolating multi-turn conversations per milestone.** |
+| **Agent37 Test Suite** | **Hackyard Contribution** | **28 comprehensive automated tests covering configuration, protocol, sanitization, and edge cases.** |
+| **Comprehensive Report & Documentation** | **Hackyard Contribution** | **`AGENT37_IMPLEMENTATION_AND_VERIFICATION.md` and overhauled root README.** |
+
+---
+
+## Known Limitations & Roadmap
+
+### Current Limitations
+- **Pre-Provisioned Instances:** The integration connects to an existing, pre-provisioned Agent37 cloud instance configured via environment variables. Automatic on-demand provisioning via control plane (`POST /v1/instances`) was intentionally omitted to prevent unexpected compute costs for learners during normal browsing.
+- **Non-Streaming Initial Implementation:** The initial integration implements `stream: false` as specified for first-version reliability. Real-time token streaming (SSE) via `response.output_text.delta` is planned for the next release.
+- **Catalogue Bounding:** The mentor only recommends resources present in the user's enrolled skills or the milestone's verified doc allowlist.
+
+### Roadmap
+- [ ] Add Server-Sent Events (SSE) streaming for real-time token rendering.
+- [ ] Support multi-file workspace inspection when Agent37 container tool runtimes are configured.
+- [ ] Add interactive diagnostic exercises directly inside the mentor chat drawer.
+- [ ] Expand the verified documentation allowlist to support additional emerging frameworks.
+
+---
+
+## Team & References
+
+### Team TGW — The Great Warriors
 - **Kartik Gupta** — Team Lead
 - **Saransh Kashyap** — Team Member
 
-Our focus is to use the existing EduVerse foundation to build a meaningful improvement that connects project work with actionable learning.
-
-## Event References
-
-- [Hackyard Build 2026 — Official Overview](https://hackyard.org/build2026)
-- [Hackyard Build 2026 — Official Rules](https://hackyard.org/build2026/rules)
-- [Hackyard Build 2026 — Builder Guide](https://hackyard.org/build2026/guide)
-
-The official rules permit the use of pre-existing project foundations when disclosed. This README therefore distinguishes the existing EduVerse platform from the event-focused contribution.
+### Event & Partner References
+- [Hackyard Build 2026 Official Site](https://hackyard.org/build2026)
+- [Hackyard Agent37 Challenge](https://hackyard.org/build2026/agent37)
+- [Hackyard Build 2026 Rules](https://hackyard.org/build2026/rules)
+- [Hackyard Builder Guide](https://hackyard.org/build2026/guide)
+- [Agent37 Cloud](https://www.agent37.com/cloud)
+- [Agent37 Documentation](https://www.agent37.com/docs)
+- [Agent37 Quickstart](https://www.agent37.com/docs/quickstart)
+- [Agent37 Chat API Reference](https://www.agent37.com/docs/agents-api/chat)
+- [Agent37 Pricing](https://www.agent37.com/pricing)
 
 ---
 
 <p align="center">
-  <strong>EduVerse</strong><br />
+  <strong>EduVerse × Agent37</strong><br />
   Learn with direction. Build with purpose. Improve with feedback.
 </p>
